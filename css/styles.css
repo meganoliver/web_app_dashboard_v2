@@ -1,0 +1,18 @@
+header {
+  background: #191970;
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+  padding: 8px 15px;
+}
+
+.nav-icons {
+  display: inline-block;
+}
+
+li {
+  list-style: none;
+  display: inline-block;
+}
