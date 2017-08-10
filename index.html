@@ -9,7 +9,7 @@
     </head>
     <body>
       <header role="banner">
-        <nav role="navigation" aria-label="mainnav">
+        <nav class="main-nav" role="navigation" aria-label="mainnav">
           <ul class="nav-icons">
             <li>
               <a href="#">
@@ -99,6 +99,95 @@
         </nav>
       </header>
 
+      <div class="main-body">
+
+        <div class="profile-bar">
+          <h2 class="your-app">YourApp</h2>
+          <img class="bell" src="icons/icon-bell.svg">
+          <img class="profile-pic" src="images/Tony_stark.jpg">
+          <h3 class="user-name">Tony Stark</h3>
+        </div>
+
+        <div class="traffic">
+          <h3>TRAFFIC</h3>
+          <nav class="traffic-nav" role="navigation" aria-label="traffic-nav">
+            <ul class="traffic-list">
+              <li>Hourly</li>
+              <li>Daily</li>
+              <li>Weekly</li>
+              <li>Monthly</li>
+            </ul>
+          </nav>
+        </div>
+
+        <div class="flex-div">
+          <div class="daily-traffic">
+            <h3>DAILY TRAFFIC</h3>
+          </div>
+
+          <div class="mobile-users">
+            <h3>MOBILE USERS</h3>
+          </div>
+        </div>
+
+        <div class="social-stats">
+          <h3>SOCIAL STATS<h3>
+        </div>
+
+        <div class="flex-div">
+          <div class="new-members">
+            <h3>NEW MEMBERS<h3>
+          </div>
+
+          <div class="recent-activity">
+            <h3>RECENT ACTIVITY</h3>
+          </div>
+        </div>
+
+        <div class="flex-div forms">
+          <div class="message-user">
+            <form>
+              <legend>MESSAGE USER</legend>
+              <input type="text" placeholder="Search for User"><br>
+              <textarea type="text" placeholder="Message for User"></textarea>
+              <button type="submit" class="send">SEND</button>
+            </div>
+            <div class="settings">
+              <h3>SETTINGS</h3>
+              <form class="sliders">
+                <label for="email">Send Email Notifications</label>
+                <label class="switch">
+                  <input type="checkbox" id="email">
+                  <span class="slider round"></span>
+                </label><br>
+                <label for="public">Set Profile to Public</label>
+                <label class="switch">
+                  <input type="checkbox" id="public">
+                  <span class="slider round"></span>
+                </label><br>
+                <label for="time-zone"></label>
+                <select id="time-zone">
+                  <option value="">Select Time Zone</option>
+                  <optgroup label="US (Common)">
+                		<option value="America/Puerto_Rico">Puerto Rico (Atlantic)</option>
+                		<option value="America/New_York">New York (Eastern)</option>
+                		<option value="America/Chicago">Chicago (Central)</option>
+                		<option value="America/Denver">Denver (Mountain)</option>
+                		<option value="America/Phoenix">Phoenix (MST)</option>
+                		<option value="America/Los_Angeles">Los Angeles (Pacific)</option>
+                		<option value="America/Anchorage">Anchorage (Alaska)</option>
+                		<option value="Pacific/Honolulu">Honolulu (Hawaii)</option>
+                	</optgroup>
+                </select><br>
+                <div class="buttons">
+                  <button type="submit" class="submit">SAVE</button>
+                  <button type="reset" class="reset">RESET</button>
+                </div>
+            </div>
+        </form>
+        </div>
+
+      </div>
 
       <footer>
 
