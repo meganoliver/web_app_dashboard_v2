@@ -13,11 +13,13 @@ legend {
 div {
   border-bottom: 1px solid #D3D4D8;
 }
+
 /*Header/nav bar: stuck to the bottom on mobile devices*/
-header {
+
+.main-nav {
   background: #191970;
   height: 50px;
-  position: fixed;
+  position: sticky;
   bottom: 0;
   width: 100%;
   z-index: 100;
@@ -26,10 +28,6 @@ header {
 .main-body {
   margin-bottom: 50px;
   margin-top: 0;
-}
-
-.main-nav {
-  height: 100%;
 }
 
 .nav-icons {
@@ -133,6 +131,20 @@ textarea {
   margin: 0 7px;
   background: #F2F3F6;
   font: 2em;
+  width: 100%;
+}
+
+input {
+  height: 20px;
+}
+
+textarea {
+  margin-top: 17px;
+}
+
+fieldset {
+  border: none;
+  margin-right: 29px;
 }
 
 .forms {
@@ -224,6 +236,17 @@ input:checked + .slider:before {
   width: 100%;
 }
 
+.public,
+.email {
+  border: none;
+  display: flex;
+  align-items: center;
+}
+
+.slider_label {
+  padding-right: 10px;
+}
+
 /*Dropbox*/
 
 #time-zone {
@@ -259,44 +282,71 @@ input:checked + .slider:before {
   justify-content: space-between;
 }
 
-/*@media (min-width: 320px) {
-  header {
-    left: 0;
-    height: 100%;
-    width: 50px;
+/*Media Queries*/
+
+@media (min-width: 768px) {
+
+  div {
+    border: none;
   }
 
-  .nav-icons {
-    flex-direction: column;
+  .traffic-list {
+    flex-direction: row;
   }
 
-  body {
-    margin-bottom: 0;
-    margin-left: 50px;
+/*Side-by-Side divs*/
+
+  .flex-div {
+    display: flex;
+    border-bottom: 1px solid #D3D4D8;
+    justify-content: space-between;
+  }
+
+  .daily-traffic,
+  .new-members,
+  .message-user {
+    border-right: 1px solid #D3D4D8;
+  }
+
+  .daily-traffic,
+  .mobile-users,
+  .new-members,
+  .recent-activity,
+  .message-user,
+  .settings {
+    width: 50%;
+    padding-left: 7px;
+  }
+
+  .buttons {
+    padding-top: 18px;
   }
 }
 
-Side-by-Side divs
+@media (min-width: 1024px) {
 
-.flex-div {
-  display: flex;
-  border-bottom: 1px solid #D3D4D8;
-  justify-content: space-between;
-}
+    .main-nav {
+      left: 0;
+      min-height: 100vh;
+      width: 50px;
+    }
 
-.daily-traffic,
-.new-members,
-.message-user {
-  border-right: 1px solid #D3D4D8;
-}
+    .main-body {
+      margin-bottom: 0;
+      margin-left: 50px;
+    }
 
-.daily-traffic,
-.mobile-users,
-.new-members,
-.recent-activity,
-.message-user,
-.settings {
-  width: 50%;
-  padding-left: 7px;
+    .nav-icons {
+      flex-direction: column;
+      justify-content: flex-start;
+      padding-top: 67px;
+    }
+
+    .icon {
+      padding: 7px 0;
+    }
+
+    .profile-bar {
+      z-index: 100;
+    }
 }
-*/
