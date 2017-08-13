@@ -1,18 +1,28 @@
 /*Global Stylings*/
 
+header {
+  height: 70px;
+}
+
 li {
   list-style: none;
   display: inline-block;
 }
 
 h3,
-legend {
+legend,
+span {
   color: #9398A9;
 }
 
 div {
   border-bottom: 1px solid #D3D4D8;
 }
+
+b{
+  font-weight: bold;
+}
+
 
 /*Header/nav bar: stuck to the bottom on mobile devices*/
 
@@ -23,11 +33,6 @@ div {
   bottom: 0;
   width: 100%;
   z-index: 100;
-}
-
-.main-body {
-  margin-bottom: 50px;
-  margin-top: 0;
 }
 
 .nav-icons {
@@ -46,6 +51,10 @@ div {
 }
 
 /*Notification/Profile div*/
+
+.banner {
+  width: 100%;
+}
 
 .profile-bar {
   background: #6482E5;
@@ -72,10 +81,11 @@ div {
 .your-app {
   margin-right: auto;
   margin-left: 10px;
+  font-weight: lighter;
 }
 
 .user-name {
-  margin-right: 10px;
+  margin-right: 32px;
   color: white;
 }
 
@@ -110,6 +120,34 @@ div {
 .social-stats {
   border-bottom: 1px solid #D3D4D8;
   padding-left: 7px;
+}
+
+/*New Users*/
+
+.new-members {
+  margin-bottom: 10px;
+}
+
+.member {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  border-bottom: 1px solid #D3D4D8;
+  padding-bottom: 5px;
+  width: 90%;
+}
+
+.member:last-child {
+  border: none;
+}
+
+.join-date {
+  margin-left: auto;
+}
+
+.name-email {
+  display: flex;
+  flex-direction: column;
 }
 
 /*Message User*/
@@ -325,6 +363,11 @@ input:checked + .slider:before {
 
 @media (min-width: 1024px) {
 
+    .banner {
+      position: relative;
+      z-index: 1000;
+    }
+
     .main-nav {
       left: 0;
       min-height: 100vh;
@@ -339,7 +382,7 @@ input:checked + .slider:before {
     .nav-icons {
       flex-direction: column;
       justify-content: flex-start;
-      padding-top: 67px;
+      padding-top: 94px;
     }
 
     .icon {
