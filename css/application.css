@@ -6,6 +6,11 @@ h3,
 legend,
 span {
   color: #9398A9; }
+  @media (min-width: 768px) {
+    h3,
+    legend,
+    span {
+      font-size: 1.3em; } }
 
 div {
   border-bottom: 1px solid #D3D4D8; }
@@ -45,6 +50,28 @@ b {
   .settings {
     width: 50%;
     padding-left: 7px; } }
+.canvas-container {
+  height: 150px;
+  clear: both; }
+  @media (min-width: 768px) {
+    .canvas-container {
+      position: relative;
+      height: 300px; } }
+
+.traffic .canvas-container {
+  width: 100%; }
+
+#traffic-graph {
+  height: 100%; }
+  @media (min-width: 768px) {
+    #traffic-graph {
+      padding-bottom: 15px;
+      height: 330px; } }
+
+@media (min-width: 768px) {
+  #daily-traffic {
+    height: 100vh; } }
+
 header {
   height: 70px; }
 
@@ -52,7 +79,7 @@ header {
   width: 100%; }
 
 .profile-bar {
-  background: #6D96E6;
+  background: #1E20FF;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -80,7 +107,7 @@ header {
   color: white; }
 
 .main-nav {
-  background: #191970;
+  background: #1e90ff;
   height: 50px;
   position: sticky;
   bottom: 0;
@@ -135,9 +162,6 @@ header {
   .main-body {
     margin-bottom: 0;
     margin-left: 50px; } }
-
-.new-members {
-  margin-bottom: 10px; }
 
 .member {
   display: flex;
@@ -313,16 +337,16 @@ input:checked + .slider:before {
       padding-top: 18px; } }
 
 .traffic {
-  display: flex;
-  flex-direction: row;
-  align-items: stretch;
-  justify-content: space-between;
   padding: 0 7px;
   border-bottom: 1px solid #D3D4D8; }
+  .traffic h3 {
+    float: left; }
+  .traffic canvas {
+    height: 300px; }
 
 .traffic-list {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: stretch;
   justify-content: space-between;
   padding: 0;
@@ -332,51 +356,56 @@ input:checked + .slider:before {
     cursor: pointer; }
   .traffic-list li:hover {
     color: white;
-    background-color: #7600A8;
+    background-color: #ff8d1e;
     border-radius: 8px; }
   .traffic-list li:active {
     color: white;
-    background-color: #7600A8;
+    background-color: #ff8d1e;
     border-radius: 8px; }
-  @media brk-tablet {
+  @media (min-width: 768px) {
     .traffic-list {
-      padding-top: 18px; } }
+      font-size: 1.25em; } }
   @media (min-width: 1024px) {
     .traffic-list {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      justify-content: space-between; }
+      display: inline;
+      padding-top: 0; }
       .traffic-list li {
         padding: 0 10px; } }
 
 .traffic-nav {
+  float: right;
   overflow: auto; }
+
+#traffic-graph {
+  height: 221px; }
 
 #alert {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  background-color: #6D96E6;
+  background-color: #1e90ff;
   color: white;
-  clear: both; }
+  clear: both;
+  padding-right: 10px; }
   @media (min-width: 1024px) {
     #alert {
       margin: 10px 10px 10px 60px;
       padding: 0 7px;
       border-radius: 5px;
-      font-size: 1.25em;
+      font-size: 1em;
       font-weight: 100; } }
 
 #close {
-  color: white;
-  font-size: 1.25em;
+  cursor: pointer;
+  color: black;
+  font-size: 1.5em;
   font-weight: bold;
-  padding-right: 10px; }
-  @media (min-width: 768px) {
-    #close {
-      font-size: 2em; } }
+  background-color: #ff8d1e;
+  border-radius: 50%;
+  text-align: center;
+  height: 30px;
+  width: 30px; }
 
 .dashboard {
   float: left;
