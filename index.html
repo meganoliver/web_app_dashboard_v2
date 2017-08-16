@@ -48,15 +48,18 @@
         <div class="traffic">
           <h3>TRAFFIC</h3>
           <nav class="traffic-nav" role="navigation" aria-label="traffic-nav">
-            <ul class="traffic-list">
-              <li>Hourly</li>
+            <ul id="traffic-list">
+              <li class="active">Hourly</li>
               <li>Daily</li>
               <li>Weekly</li>
               <li>Monthly</li>
             </ul>
           </nav>
           <div class="canvas-container">
-            <canvas id="traffic-graph"></canvas>
+            <canvas id="hour-traffic" ></canvas>
+            <canvas id="day-traffic" ></canvas>
+            <canvas id="week-traffic" ></canvas>
+            <canvas id="month-traffic" ></canvas>
           </div>
         </div>
 
@@ -84,41 +87,7 @@
           <div class="new-members">
             <h3>NEW MEMBERS</h3>
 
-            <div class="member">
-              <img class="profile-pic" src="images/spiderman_logo.jpg" alt="spiderman logo">
-              <div class="name-email">
-                <span>Peter Parker</span>
-                <a href="parkerp@shield.gov">parkerp@shield.gov</a>
-              </div>
-              <span class="join-date">7/2/2017</span>
-            </div>
-
-            <div class="member">
-              <img class="profile-pic" src="images/antman.jpg" alt="Scott Lang's picture">
-              <div class="name-email">
-                <span>Scott Lang</span>
-                <a href="langs@shield.gov">langs@shield.gov</a>
-              </div>
-              <span class="join-date">6/23/2017</span>
-            </div>
-
-            <div class="member">
-              <img class="profile-pic" src="images/witch.jpg" alt="Wanda Maximoff's picture">
-              <div class="name-email">
-                <span>Wanda Maximoff</span>
-                <a href="maximoffw@shield.gov">maximoffw@shield.gov</a>
-              </div>
-              <span class="join-date">6/18/2017</span>
-            </div>
-
-            <div class="member">
-              <img class="profile-pic" src="images/vision.jpg" alt="Vision's picture">
-              <div class="name-email">
-                <span>Vision</span>
-                <a href="vision@shield.gov">vision@shield.gov</a>
-              </div>
-              <span class="join-date">6/18/2017</span>
-            </div>
+            
           </div>
 
           <div class="recent-activity">
@@ -191,6 +160,7 @@
       </footer>
       <script src="js/d3.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.bundle.min.js"></script>
+      <script src="js/traffic-chart.js"></script>
       <script src="js/script.js"></script>
     </body>
   </html>

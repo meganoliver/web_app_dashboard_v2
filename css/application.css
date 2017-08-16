@@ -61,10 +61,17 @@ b {
 .traffic .canvas-container {
   width: 100%; }
 
-#traffic-graph {
+#hour-traffic,
+#day-traffic,
+#week-traffic,
+#month-traffic {
+  position: absolute;
   height: 100%; }
   @media (min-width: 768px) {
-    #traffic-graph {
+    #hour-traffic,
+    #day-traffic,
+    #week-traffic,
+    #month-traffic {
       padding-bottom: 15px;
       height: 330px; } }
 
@@ -344,33 +351,34 @@ input:checked + .slider:before {
   .traffic canvas {
     height: 300px; }
 
-.traffic-list {
+#traffic-list {
   display: flex;
   flex-direction: row;
   align-items: stretch;
   justify-content: space-between;
   padding: 0;
   width: 100%; }
-  .traffic-list li {
+  #traffic-list li {
     padding: 5px;
     cursor: pointer; }
-  .traffic-list li:hover {
-    color: white;
-    background-color: #ff8d1e;
-    border-radius: 8px; }
-  .traffic-list li:active {
+  #traffic-list li:hover {
     color: white;
     background-color: #ff8d1e;
     border-radius: 8px; }
   @media (min-width: 768px) {
-    .traffic-list {
+    #traffic-list {
       font-size: 1.25em; } }
   @media (min-width: 1024px) {
-    .traffic-list {
+    #traffic-list {
       display: inline;
       padding-top: 0; }
-      .traffic-list li {
+      #traffic-list li {
         padding: 0 10px; } }
+
+.active {
+  color: white;
+  background-color: #ff8d1e;
+  border-radius: 8px; }
 
 .traffic-nav {
   float: right;
