@@ -1,17 +1,10 @@
 
 const trafficList = document.getElementById('traffic-list');
 const buttons = trafficList.children;
-let activeBtn = document.getElementsByClassName('active');
 
 //Day is default button//
+buttons[0].className = 'active';
 
-function defaultButton() {
-  window.onload = buttons[0].style.backgroundColor = '#ff8d1e';
-  window.onload = buttons[0].style.color = 'white';
-  window.onload = buttons[0].style.borderRadius = '8px';
-}
-
-defaultButton()
 
 //Web Traffic//
   //Hourly//
@@ -205,10 +198,10 @@ defaultButton()
 //Functions to hide and show graphs based on buttons
 
   //Create a const for each chart.
-  const hour = document.getElementById('hour-traffic')
-  const day = document.getElementById('day-traffic')
-  const week = document.getElementById('week-traffic')
-  const month = document.getElementById('month-traffic')
+  const hour = document.getElementById('hour-traffic');
+  const day = document.getElementById('day-traffic');
+  const week = document.getElementById('week-traffic');
+  const month = document.getElementById('month-traffic');
 
   //Setting defaults
   hour.className = 'visible';
@@ -217,21 +210,19 @@ defaultButton()
   month.className = 'hidden';
   // Match buttons to graphs and show graphs if button is pushed, else hide them.
 
-  const graphs = [hour, day, week, month]; //Array of the graphs
+const graphs = [hour, day, week, month]; //Array of the graphs
 
-
+//Loop through button clicks
 for (let i = 0; i < buttons.length; i++) {
-  buttons[i].addEventListener('click', function(e){
+    buttons[i].addEventListener('click', function(e) {
+      buttons[0].className = '';
+
       if(e) {
-        buttons[i].className = 'active';
-        console.log(i);
-        console.log(graphs[i]);
+        buttons[i].removeClassName = 'active';
         graphs[i].className = 'visible';
-      } else {
-        buttons.className = '';
-        graphs.className = 'hidden';
       }
-  });
+    });
+
 }
 
 //Daily Traffic//

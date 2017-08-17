@@ -18,6 +18,6 @@ const hide = document.getElementById('alert');
 const alertCircle = document.getElementById('svg-alert')
 
 closeAlert.addEventListener('click', () => {
-  hide.style.display = 'none';
+  hide.style.visibility = 'hidden';
   alertCircle.style.display = 'none';
 });
