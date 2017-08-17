@@ -204,23 +204,32 @@ defaultButton()
 
 //Functions to hide and show graphs based on buttons
 
-  //Only show hourly graph as default
-  document.getElementById('day-traffic').style.visibility = 'hidden';
-  document.getElementById('week-traffic').style.visibility = 'hidden';
-  document.getElementById('month-traffic').style.visibility = 'hidden';
+  //Create a const for each chart.
+  const hour = document.getElementById('hour-traffic')
+  const day = document.getElementById('day-traffic')
+  const week = document.getElementById('week-traffic')
+  const month = document.getElementById('month-traffic')
 
+  //Setting defaults
+  hour.className = 'visible';
+  day.className = 'hidden';
+  week.className = 'hidden';
+  month.className = 'hidden';
   // Match buttons to graphs and show graphs if button is pushed, else hide them.
 
-const graphs = [hourlyTraffic, dayTraffic, weeklyTraffic, monthlyTraffic];
+  const graphs = [hour, day, week, month]; //Array of the graphs
+
 
 for (let i = 0; i < buttons.length; i++) {
   buttons[i].addEventListener('click', function(e){
-      console.log('clicked');
       if(e) {
         buttons[i].className = 'active';
         console.log(i);
         console.log(graphs[i]);
-        graphs[i].style.visibility = "visible";
+        graphs[i].className = 'visible';
+      } else {
+        buttons.className = '';
+        graphs.className = 'hidden';
       }
   });
 }

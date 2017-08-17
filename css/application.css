@@ -79,6 +79,12 @@ b {
   #daily-traffic {
     height: 100vh; } }
 
+.visible {
+  visibility: visible; }
+
+.hidden {
+  visibility: hidden; }
+
 header {
   height: 70px; }
 
