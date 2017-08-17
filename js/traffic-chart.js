@@ -216,7 +216,10 @@ const graphs = [hour, day, week, month]; //Array of the graphs
 for (let i = 0; i < buttons.length; i++) {
     buttons[i].addEventListener('click', function(e) {
       buttons[0].className = '';
-
+      graphs[0].className = 'hidden';
+      graphs[1].className = 'hidden';
+      graphs[2].className = 'hidden';
+      graphs[3].className = 'hidden';
       if(e) {
         buttons[i].removeClassName = 'active';
         graphs[i].className = 'visible';
