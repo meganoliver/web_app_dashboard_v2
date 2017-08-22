@@ -1,15 +1,11 @@
 
-const trafficList = document.getElementById('traffic-list');
-const buttons = trafficList.children;
-
-//Day is default button//
-buttons[0].className = 'active';
-
+const trafficList = document.getElementById('traffic-list'); //Traffic ul
+const buttons = trafficList.children; //Traffic buttons
 
 //Web Traffic//
   //Hourly//
-  const getHour = document.getElementById('hour-traffic');
 
+  const getHour = document.getElementById('hour-traffic');
   const hourlyTraffic = new Chart(getHour, {
     type: 'line',
     data: {
@@ -37,20 +33,6 @@ buttons[0].className = 'active';
       legend: {
         display: false
       },
-      scales: {
-        xAxis: [{
-          gridLines: [{
-          drawTicks: false,
-          drawOnChartArea: true
-          }]
-        }],
-        yAxis: [{
-          gridLines: [{
-            drawTicks: false,
-            drawOnChartArea: true
-          }],
-        }],
-      }
     }
   });
 
@@ -85,18 +67,13 @@ buttons[0].className = 'active';
           display: false
         },
         scales: {
-          xAxis: [{
-            gridLines: [{
-            drawTicks: false,
-            drawOnChartArea: true
-            }]
-          }],
-          yAxis: [{
-            gridLines: [{
-              drawTicks: false,
-              drawOnChartArea: true
-            }],
-          }],
+          yAxes: [{
+            ticks: {
+              min: 1200,
+              max: 3200,
+              stepSize: 400
+            }
+          }]
         }
       }
     });
@@ -132,20 +109,15 @@ buttons[0].className = 'active';
           display: false
         },
         scales: {
-          xAxis: [{
-            gridLines: [{
-            drawTicks: false,
-            drawOnChartArea: true
+          yAxes: [{
+            ticks: {
+              min: 1500,
+              max: 5500,
+              stepSize: 1000
+            }
             }]
-          }],
-          yAxis: [{
-            gridLines: [{
-              drawTicks: false,
-              drawOnChartArea: true
-            }],
-          }],
+          }
         }
-      }
     });
 
     //Monthly//
@@ -179,18 +151,13 @@ buttons[0].className = 'active';
           display: false
         },
         scales: {
-          xAxis: [{
-            gridLines: [{
-            drawTicks: false,
-            drawOnChartArea: true
-            }]
-          }],
-          yAxis: [{
-            gridLines: [{
-              drawTicks: false,
-              drawOnChartArea: true
-            }],
-          }],
+          yAxes: [{
+            ticks: {
+              min: 6500,
+              max: 10500,
+              stepSize: 1000
+            }
+          }]
         }
       }
     });
@@ -216,16 +183,18 @@ const graphs = [hour, day, week, month]; //Array of the graphs
 for (let i = 0; i < buttons.length; i++) {
     buttons[i].addEventListener('click', function(e) {
       buttons[0].className = '';
+      buttons[1].className = '';
+      buttons[2].className = '';
+      buttons[3].className = '';
       graphs[0].className = 'hidden';
       graphs[1].className = 'hidden';
       graphs[2].className = 'hidden';
       graphs[3].className = 'hidden';
       if(e) {
-        buttons[i].removeClassName = 'active';
         graphs[i].className = 'visible';
+        buttons[i].className = 'active';
       }
     });
-
 }
 
 //Daily Traffic//
