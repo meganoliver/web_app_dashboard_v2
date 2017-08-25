@@ -1,11 +1,10 @@
 const notifyBubble = document.getElementById('notify-bell');
-const overlay = document.getElementById('alert-overlay');
-const alertBox = document.getElementById('alert-box');
 const closeAlert = document.getElementById('close');
 const hide = document.getElementById('alert');
-const alertCircle = document.getElementById('svg-alert');
+const overlay = document.getElementById('pop-up-overlay');
+const popUpBox = document.getElementById('pop-up-div');
 const popUpClose = document.getElementsByClassName('alert-close');
-const alertMessage = document.getElementsByClassName('pop-up-alert');
+const popUpMessage = document.getElementsByClassName('pop-up-alert');
 
 
 //Create a circle svg
@@ -47,28 +46,39 @@ number()
 
 closeAlert.addEventListener('click', () => {
   hide.style.visibility = 'hidden';
-  alertCircle.style.visibility = 'hidden';
 });
 
 //Create alert box on notification bubble click
 
-alertBox.className = 'hidden';
+popUpBox.className = 'hidden';
 overlay.className = 'hidden';
 
+function hideBubble() {
+  let bubble = notifyBubble.lastElementChild;
+  notifyBubble.removeChild(bubble);
+}
+
 notifyBubble.addEventListener('click', (e) =>{
-    alertBox.className = 'visible';
+    popUpBox.className = 'visible';
     overlay.className = 'visible';
 });
 
 //Close alert messages when x is clicked
-for(let i = 0; i < popUpClose.length; i++) {
-  popUpClose[i].addEventListener('click', function(e) {
-    alertBox.removeChild(popUpClose[i]);
-    alertBox.removeChild(alertMessage[i]);
-    
-     if(popUpClose.length == 0 && e) {
-      alertBox.style.visibility = 'hidden';
-      overlay.style.visibility = 'hidden';
-    }
-  });
+
+function closeBox() {
+  if(popUpBox.children.length < 1) {
+    popUpBox.className = 'hidden';
+    overlay.className = 'hidden';
+    hideBubble();
+  }
 }
+
+popUpBox.addEventListener('click', (e) =>{
+  let notification = e.target.parentNode;
+  let notificationParent = notification.parentNode;
+  if(e.target.className = 'popUpClose' && popUpBox.children.length > 0) {
+    notificationParent.removeChild(notification);
+    closeBox();
+
+  }
+});

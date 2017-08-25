@@ -523,7 +523,7 @@ input:checked + .slider:before {
       border-radius: 5px;
       font-size: 1em; } }
 
-#alert-overlay {
+#pop-up-overlay {
   opacity: .8;
   position: fixed;
   top: 0;
@@ -533,7 +533,7 @@ input:checked + .slider:before {
   height: 100%;
   z-index: 5000; }
 
-#alert-box {
+#pop-up-div {
   position: absolute;
   top: 25%;
   left: 25%;
@@ -543,7 +543,7 @@ input:checked + .slider:before {
   height: 100px;
   z-index: 100000;
   font-weight: bold; }
-  #alert-box :last-child {
+  #pop-up-div :last-child {
     margin-top: 10px; }
 
 .pop-up-alert {
