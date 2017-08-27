@@ -5,7 +5,12 @@ const overlay = document.getElementById('pop-up-overlay');
 const popUpBox = document.getElementById('pop-up-div');
 const popUpClose = document.getElementsByClassName('alert-close');
 const popUpMessage = document.getElementsByClassName('pop-up-alert');
-
+const searchUsers = document.getElementById('user-search');
+const userNames = document.getElementsByClassName('new');
+const message = document.getElementById('message-user');
+const messageBtn = document.getElementById('message-button');
+const messageDiv = document.getElementById('message-div');
+const newDiv = document.createElement('div');
 
 //Create a circle svg
 function g () {
@@ -53,17 +58,17 @@ closeAlert.addEventListener('click', () => {
 popUpBox.className = 'hidden';
 overlay.className = 'hidden';
 
-function hideBubble() {
-  let bubble = notifyBubble.lastElementChild;
-  notifyBubble.removeChild(bubble);
-}
-
 notifyBubble.addEventListener('click', (e) =>{
     popUpBox.className = 'visible';
     overlay.className = 'visible';
 });
 
-//Close alert messages when x is clicked
+//Close alert messages when x is clicked. Close box when all messages are gone.
+
+function hideBubble() {
+  let bubble = notifyBubble.lastElementChild;
+  notifyBubble.removeChild(bubble);
+}
 
 function closeBox() {
   if(popUpBox.children.length < 1) {
@@ -79,6 +84,51 @@ popUpBox.addEventListener('click', (e) =>{
   if(e.target.className = 'popUpClose' && popUpBox.children.length > 0) {
     notificationParent.removeChild(notification);
     closeBox();
-
   }
+});
+
+
+//Autocomplete search field
+
+searchUsers.addEventListener('input', function(e) {
+  for(let i = 0; i < searchUsers.length; i++) {
+    console.log('typing');
+    let searchContent = searchUsers.value.toLowerCase();
+    console.log(searchContent);
+  }
+});
+
+//Create Error message if no content.
+
+function alert() {
+  newDiv.style.color = 'red';
+  newDiv.className = 'submitMsg';
+  messageDiv.appendChild(newDiv);
+  const errorMsg = document.createTextNode("Please enter a user and a message before submitting.");
+  newDiv.appendChild(errorMsg);
+}
+
+function success() {
+  newDiv.style.color = 'green';
+  newDiv.className = 'submitMsg';
+  messageDiv.appendChild(newDiv);
+  let success = document.createTextNode("Your message has been sent.");
+  newDiv.appendChild(success);
+}
+
+function clearMsg() {
+  if(messageDiv.contains(newDiv)) {
+    console.log('truth!');
+    newDiv.textContent = "";
+    messageDiv.removeChild(newDiv);
+  }
+}
+
+messageBtn.addEventListener('click', (e) => {
+    clearMsg();
+    if(searchUsers.value.length === 0 || message.value.length === 0) {
+      alert();
+    } else if(searchUsers.value.length > 0 && message.value.length > 0) {
+      success();
+    }
 });
