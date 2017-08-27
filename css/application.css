@@ -62,7 +62,7 @@ b {
   margin-bottom: 8px; }
   @media (min-width: 768px) {
     .social-widgets {
-      width: 25%; } }
+      width: 30%; } }
 
 @media (min-width: 768px) {
   .social-wrapper {
@@ -91,6 +91,9 @@ b {
   height: 5rem;
   margin-top: 17px;
   margin-left: 25px; }
+  @media (min-width: 768px) {
+    .social-svg {
+      margin-left: 5px; } }
 
 .social-logo {
   width: 2rem;
@@ -168,7 +171,7 @@ header {
   font-weight: 100; }
 
 .user-name {
-  margin-right: 32px;
+  margin-right: 6px;
   color: white; }
 
 .main-nav {
@@ -330,7 +333,6 @@ textarea {
   bottom: 0;
   background-color: #F2F3F6;
   border: 1px solid #617DD9;
-  -webkit-transition: .4s;
   transition: .4s; }
 
 .slider:before {
@@ -341,7 +343,6 @@ textarea {
   left: 4px;
   bottom: 4px;
   background-color: white;
-  -webkit-transition: .4s;
   transition: .4s; }
 
 input:checked + .slider {
@@ -352,8 +353,6 @@ input:focus + .slider {
   box-shadow: 0 0 1px #617DD9; }
 
 input:checked + .slider:before {
-  -webkit-transform: translateX(50px);
-  -ms-transform: translateX(50px);
   transform: translateX(50px); }
 
 .slider.round {
@@ -416,9 +415,16 @@ input:checked + .slider:before {
   padding: 0 7px;
   border-bottom: 1px solid #D3D4D8; }
   .traffic h3 {
-    float: left; }
+    float: left;
+    position: absolute; }
   .traffic canvas {
     height: 300px; }
+  @media (min-width: 1024px) {
+    .traffic {
+      padding: 10px 7px; }
+      .traffic h3 {
+        position: relative;
+        clear: both; } }
 
 #traffic-list {
   display: flex;
@@ -457,7 +463,8 @@ input:checked + .slider:before {
 
 .traffic-nav {
   float: right;
-  overflow: auto; }
+  overflow: auto;
+  font-size: .8rem; }
 
 #traffic-graph {
   height: 221px; }
@@ -536,11 +543,10 @@ input:checked + .slider:before {
 #pop-up-div {
   position: absolute;
   top: 25%;
-  left: 25%;
+  left: 5%;
   background: #ff8d1e;
   border-radius: 8px;
-  width: 50%;
-  height: 100px;
+  width: 90%;
   z-index: 100000;
   font-weight: bold; }
   #pop-up-div :last-child {
@@ -548,6 +554,7 @@ input:checked + .slider:before {
 
 .pop-up-alert {
   float: left;
+  width: 80%;
   padding-left: 10px;
   clear: both; }
 

@@ -1,5 +1,6 @@
 const notifyBubble = document.getElementById('notify-bell');
 const closeAlert = document.getElementById('close');
+const mainBody = document.getElementById('body');
 const hide = document.getElementById('alert');
 const overlay = document.getElementById('pop-up-overlay');
 const popUpBox = document.getElementById('pop-up-div');
@@ -50,7 +51,7 @@ number()
 //Close alert box on click
 
 closeAlert.addEventListener('click', () => {
-  hide.style.visibility = 'hidden';
+  body.removeChild(hide);
 });
 
 //Create alert box on notification bubble click
@@ -98,7 +99,7 @@ searchUsers.addEventListener('input', function(e) {
   }
 });
 
-//Create Error message if no content.
+//Create Error message if no content and sent message if content.
 
 function alert() {
   newDiv.style.color = 'red';
@@ -118,7 +119,6 @@ function success() {
 
 function clearMsg() {
   if(messageDiv.contains(newDiv)) {
-    console.log('truth!');
     newDiv.textContent = "";
     messageDiv.removeChild(newDiv);
   }
