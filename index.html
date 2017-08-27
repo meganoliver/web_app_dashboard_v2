@@ -233,7 +233,19 @@
           <div id="message-div" class="message-user">
             <fieldset>
               <legend>MESSAGE USER</legend>
-              <input id="user-search" type="text" placeholder="Search for User"><br>
+              <input id="user-search" type="text" list="users" placeholder="Search for User"><br>
+                <datalist id="users">
+                  <option value="Steve Rogers">
+                  <option value="Tony Stark">
+                  <option value="Natasha Romanoff">
+                  <option value="Peter Parker">
+                  <option value="Thor">
+                  <option value="Bruce Banner">
+                  <option value="Vision">
+                  <option value="Wanda Maximoff">
+                  <option value="Scott Lang">
+                  <option value="Clint Barton">
+                </datalist>
               <textarea id="message-user" placeholder="Message User"></textarea>
               <button id="message-button" type="submit" class="send">SEND</button>
             </fieldset>
