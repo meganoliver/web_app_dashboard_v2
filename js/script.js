@@ -20,6 +20,22 @@ const resetBtn = document.getElementById('reset-button');
 const emailSwitch = document.getElementById('email');
 const profileSwitch = document.getElementById('public');
 const timeZone = document.getElementById('time-zone');
+const mainNav = document.getElementById('main-nav');
+const sideNav = document.getElementById('side-nav');
+
+//scrolling side nav
+
+window.addEventListener('scroll', () => {
+  if(window.pageYOffset >= 50 && window.width > '1024px') {
+    sideNav.style.paddingTop = '20px';
+    mainNav.style.top = '0';
+  }
+  if(window.pageYOffset < 50 && window.width > '1024px') {
+    mainNav.style.top = '50px';
+    sideNav.style.marginTop = '50px';
+    mainNav.style.top = '10px';
+  }
+});
 
 //Create a circle svg
 function g () {
