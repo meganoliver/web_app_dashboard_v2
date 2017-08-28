@@ -7,11 +7,19 @@ const popUpBox = document.getElementById('pop-up-div');
 const popUpClose = document.getElementsByClassName('alert-close');
 const popUpMessage = document.getElementsByClassName('pop-up-alert');
 const searchUsers = document.getElementById('user-search');
-const userNames = document.getElementsByClassName('new');
+const userNames = document.getElementsByClassName('userName');
+const dataList = document.getElementById('users');
 const message = document.getElementById('message-user');
 const messageBtn = document.getElementById('message-button');
 const messageDiv = document.getElementById('message-div');
 const newDiv = document.createElement('div');
+const formSettings = document.getElementById('form-settings');
+const settingsBtns = document.getElementById('buttons');
+const saveBtn = document.getElementById('save-button');
+const resetBtn = document.getElementById('reset-button');
+const emailSwitch = document.getElementById('email');
+const profileSwitch = document.getElementById('public');
+const timeZone = document.getElementById('time-zone');
 
 //Create a circle svg
 function g () {
@@ -131,4 +139,47 @@ messageBtn.addEventListener('click', (e) => {
     } else if(searchUsers.value.length > 0 && message.value.length > 0) {
       success();
     }
+});
+
+//Set up local storage for settings.
+
+function emailNotification() {
+  if (emailSwitch.checked == true){
+    localStorage.setItem('emailChecked', true);
+  } else {
+    localStorage.removeItem('emailChecked');
+  }
+}
+
+function publicProfile() {
+  if (profileSwitch.checked == true){
+    localStorage.setItem('profileChecked', true);
+  } else {
+    localStorage.removeItem('profileChecked');
+  }
+}
+
+function selectTime() {
+  let selectZone = timeZone.options.selectedIndex;
+  localStorage.setItem('zone', selectZone);
+}
+
+settingsBtns.addEventListener('click', (e) => {
+  if (e.target === saveBtn) {
+    emailNotification();
+    publicProfile();
+    selectTime();
+  }
+
+  if (e.target === resetBtn) {
+    localStorage.removeItem('emailChecked');
+    localStorage.removeItem('profileChecked');
+    localStorage.removeItem('zone');
+  }
+});
+
+window.addEventListener('load', function() {
+  emailSwitch.checked = localStorage.emailChecked;
+  profileSwitch.checked = localStorage.profileChecked;
+  timeZone.options.selectedIndex = parseInt(localStorage.zone);
 });

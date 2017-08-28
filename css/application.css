@@ -402,13 +402,13 @@ input:checked + .slider:before {
   height: 32px;
   width: 50%; }
 
-.buttons {
+#buttons {
   display: flex;
   flex-direction: row;
   align-items: stretch;
   justify-content: space-between; }
   @media (min-width: 768px) {
-    .buttons {
+    #buttons {
       padding-top: 18px; } }
 
 .traffic {

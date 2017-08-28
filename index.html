@@ -235,23 +235,23 @@
               <legend>MESSAGE USER</legend>
               <input id="user-search" type="text" list="users" placeholder="Search for User"><br>
                 <datalist id="users">
-                  <option value="Steve Rogers">
-                  <option value="Tony Stark">
-                  <option value="Natasha Romanoff">
-                  <option value="Peter Parker">
-                  <option value="Thor">
-                  <option value="Bruce Banner">
-                  <option value="Vision">
-                  <option value="Wanda Maximoff">
-                  <option value="Scott Lang">
-                  <option value="Clint Barton">
+                  <option class="userName" value="Steve Rogers">
+                  <option class="userName" value="Tony Stark">
+                  <option class="userName" value="Natasha Romanoff">
+                  <option class="userName" value="Peter Parker">
+                  <option class="userName" value="Thor">
+                  <option class="userName" value="Bruce Banner">
+                  <option class="userName" value="Vision">
+                  <option class="userName" value="Wanda Maximoff">
+                  <option class="userName" value="Scott Lang">
+                  <option class="userName" value="Clint Barton">
                 </datalist>
               <textarea id="message-user" placeholder="Message User"></textarea>
               <button id="message-button" type="submit" class="send">SEND</button>
             </fieldset>
           </div>
           <div class="settings">
-            <fieldset>
+            <fieldset id="form-settings">
               <legend>SETTINGS</legend>
               <div class="sliders">
                 <div class="email">
@@ -283,9 +283,9 @@
               		<option value="Pacific/Honolulu">Honolulu (Hawaii)</option>
               	</optgroup>
               </select><br>
-              <div class="buttons">
-                <button type="submit" class="submit">SAVE</button>
-                <button type="reset" class="reset">RESET</button>
+              <div id="buttons">
+                <button id="save-button" type="submit" class="submit">SAVE</button>
+                <button id="reset-button" type="reset" class="reset">RESET</button>
               </div>
             </fieldset>
           </div>
